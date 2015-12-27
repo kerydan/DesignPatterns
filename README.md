@@ -14,8 +14,8 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [ ] [Flyweight](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_MaxCounters.cpp)
 
 ##Behavioral Patterns
-- [ ] [Command](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_FrogRiverOne.cpp)
-- [ ] [Iterator](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_MissingInteger.cpp)
+- [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
+- [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
 - [ ] [State](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_MaxCounters.cpp)
-- [ ] [Strategy](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_MaxCounters.cpp)
-- [ ] [Template Method](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_MaxCounters.cpp)
+- [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
+- [ ] [Template Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
