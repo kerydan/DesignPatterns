@@ -5,7 +5,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 
 ##Creational Patterns
 - [x] [Singleton](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Singleton.cpp)
-- [ ] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
+- [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
 - [ ] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
 
 ##Structural Patterns
