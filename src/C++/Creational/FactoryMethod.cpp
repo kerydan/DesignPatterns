@@ -1,18 +1,23 @@
-//------------- Abstract products and factory
+// Template method implementation
+
+//------------- Abstract product
 class Weapon{
 };
 
+// ------------ Abstract product factory
+class WeaponFactory{
+public:
+    virtual Weapon* CreateWeapon() = 0;
+};
+
+//--------------  Concrete products
 class Arrow: public Weapon{
 };
 
 class Armor : public Weapon{
 };
 
-class WeaponFactory{
-public:
-    virtual Weapon* CreateWeapon() = 0;
-};
-
+// ------------ Concrete products factories
 class ArmorFactory: public WeaponFactory{
 public:
     virtual Weapon* CreateWeapon(){ return new Armor; };
