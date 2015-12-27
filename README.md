@@ -1,8 +1,5 @@
-﻿Codility
-========
-
-[Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) implementation in C++
-
+﻿[Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) implementation in C++
+=================
 
 ##Creational Patterns
 - [ ] [Singleton](https://github.com/kerydan/Codility/blob/master/src/C++/lesson2/L2_CountingElements_FrogRiverOne.cpp)
