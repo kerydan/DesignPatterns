@@ -10,7 +10,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 
 ##Structural Patterns
 - [ ] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
-- [ ] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
+- [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
 
 ##Behavioral Patterns
