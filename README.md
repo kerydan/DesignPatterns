@@ -7,10 +7,13 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [x] [Singleton](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Singleton.cpp)
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
 - [x] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
+- [ ] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
+- [ ] [Builder](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Builder.cpp)
 
 ##Structural Patterns
-- [ ] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
+- [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
+- [ ] [Bridge](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Bridge.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
 
 ##Behavioral Patterns
