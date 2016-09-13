@@ -19,9 +19,9 @@ class PowerState
 {
 public:
 	static PowerState* GetInstance();
-	void GoSuspendPower(PowerManager* man) {};
-	void GoFullPower(PowerManager* man) {};
-	void GoLowPower(PowerManager* man) {};
+	virtual void GoSuspendPower(PowerManager* man) {};
+	virtual void GoFullPower(PowerManager* man) {};
+	virtual void GoLowPower(PowerManager* man) {};
 
 protected:
 	PowerState() {}
@@ -35,9 +35,9 @@ public:
 	{
 		static LowPowerState state;
 		return &state;
-	};
-	void GoSuspendPower(PowerManager *man);
-	void GoFullPower(PowerManager *man);
+	}
+	virtual void GoSuspendPower(PowerManager *man);
+	virtual void GoFullPower(PowerManager *man);
 };
 
 class FullPowerState : public PowerState
@@ -47,7 +47,7 @@ public:
 	{
 		static FullPowerState state;
 		return &state;
-	};
+	}
 };
 
 class SuspendPowerState : public PowerState
@@ -57,33 +57,32 @@ public:
 	{
 		static SuspendPowerState state;
 		return &state;
-	};
-	void GoFullPower(PowerManager *man);
+	}
+	virtual void GoFullPower(PowerManager *man);
 };
 
-
-PowerManager::PowerManager() 
-{ 
-	state = LowPowerState::GetInstance(); 
+PowerManager::PowerManager()
+{
+	state = LowPowerState::GetInstance();
 }
 
 void PowerManager::GoSuspendPower()
 {
 	// do whatever needed prior going to the suspend mode
 	state->GoSuspendPower(this);
-};
+}
 
 void PowerManager::GoFullPower()
 {
 	// do whatever needed prior going to the suspend mode
 	state->GoFullPower(this);
-};
+}
 
 void PowerManager::GoLowPower()
 {
 	// do whatever needed prior going to the suspend mode
 	state->GoLowPower(this);
-};
+}
 
 void LowPowerState::GoSuspendPower(PowerManager *man)
 {
@@ -107,6 +106,7 @@ void SuspendPowerState::GoFullPower(PowerManager *man)
 int main()
 {
 	PowerManager power_man;
+	power_man.GoSuspendPower();
 	power_man.GoFullPower();
 	return 0;
 }
