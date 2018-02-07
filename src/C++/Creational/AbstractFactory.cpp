@@ -1,4 +1,5 @@
 //------------- Abstract products and factory
+// See UML diagram in the same folder
 class Armor{
 };
 
