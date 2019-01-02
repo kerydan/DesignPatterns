@@ -23,4 +23,4 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [ ] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
 - [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
 - [x] [Template Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/TemplateMethod.cpp)
-- [x] [bla bla]
+- [x] [bla bla1]
