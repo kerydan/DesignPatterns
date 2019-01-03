@@ -3,8 +3,8 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) in C++
 
-##Creational Patterns
-- [ ] [Singleton]            [C++][Singleton_C]           [Python][Singleton_P]
+## Creational Patterns
+- [ ] Singleton            [C++][Singleton_C]           [Python][Singleton_P]
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
 - [x] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
 - [x] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
