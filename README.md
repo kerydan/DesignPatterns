@@ -3,14 +3,14 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) in C++
 
-## Creational Patterns
+### Creational Patterns
 - [ ] Singleton  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [C++][Singleton_C]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Python][Singleton_P]
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
 - [x] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
 - [x] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
 - [x] [Builder](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Builder.cpp)
 
-## Structural Patterns
+### Structural Patterns
 - [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
 - [x] [Bridge](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Bridge.cpp)
