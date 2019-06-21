@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <iostream>
 
+class PowerState;
+
 class PowerManager
 {
 public:

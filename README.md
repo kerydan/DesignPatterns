@@ -20,7 +20,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 ### Behavioral Patterns
 - [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
-- [ ] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
+- [x] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
 - [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
 - [x] [Template Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/TemplateMethod.cpp)
 - [x] [Visitor](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Visitor.cpp)
