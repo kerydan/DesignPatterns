@@ -4,22 +4,29 @@
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) in C++
 
 ### Creational Patterns
-- Singleton  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [C++][Singleton_C]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Python][Singleton_P]
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
+- [x] [Builder](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Builder.cpp)
 - [x] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
 - [x] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
-- [x] [Builder](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Builder.cpp)
+- Singleton  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [C++][Singleton_C]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Python][Singleton_P]
 
 ### Structural Patterns
-- [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
 - [x] [Bridge](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Bridge.cpp)
 - [ ] [Composite](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Composite.cpp)
+- [ ] [Decorator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Decorator.cpp)
+- [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
+- [ ] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
 
 ### Behavioral Patterns
+- [ ] [Chain of responsibility](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/ChainOR.cpp)
 - [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
+- [ ] [Interpreter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Interpreter.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
+- [ ] [Mediator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Mediator.cpp)
+- [ ] [Memento](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Memento.cpp)
+- [ ] [Observer](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Observer.cpp)
 - [x] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
 - [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
 - [x] [Template Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/TemplateMethod.cpp)
