@@ -1,7 +1,7 @@
 ﻿Design Patterns
 ===============
 
-Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) in C++
+Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_Type) in C++
 
 ### Creational Patterns
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
