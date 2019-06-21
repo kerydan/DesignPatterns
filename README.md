@@ -3,8 +3,8 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) in C++
 
-##Creational Patterns
-- [x] [Singleton](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Singleton.cpp)
+## Creational Patterns
+- [ ] Singleton  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [C++][Singleton_C]  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Python][Singleton_P]
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
 - [x] [Factory Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/FactoryMethod.cpp)
 - [x] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
@@ -24,3 +24,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)
 - [x] [Template Method](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/TemplateMethod.cpp)
 - [x] [Visitor](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Visitor.cpp)
+
+[Singleton_C]: https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Singleton.cpp/
+[Singleton_P]: https://github.com/kerydan/DesignPatterns/blob/master/src/Py/Creational/Singleton.py/
+[7_spaces]: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
