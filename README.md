@@ -10,14 +10,14 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [x] [Prototype](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Prototype.cpp)
 - [x] [Builder](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/Builder.cpp)
 
-##Structural Patterns
+## Structural Patterns
 - [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
 - [x] [Bridge](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Bridge.cpp)
 - [ ] [Composite](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Composite.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
 
-##Behavioral Patterns
+# Behavioral Patterns
 - [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
 - [ ] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
