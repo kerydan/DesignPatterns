@@ -1,43 +1,53 @@
 /*
-Design Pattern Facade. 
+Design Pattern Decorator. 
 
-Simplifies interface to a set of objects or packages
+allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
 */
 
-class Package1{
+#include <iostream>
+
+class ICar
+{
 public:
-    void Shift(){}
+	virtual void Report() = 0;
 };
 
-class Package2{
+class Car : public ICar
+{
 public:
-    int Rotate(int i){ return i + 2; }
-
+	void Report() { std::cout << "A car."; };
 };
 
-class Package3{
+class DecoratedSpoiler : public ICar
+{
+	ICar* pCar;
 public:
-    int Calc(){ return 3; }
-
+	DecoratedSpoiler(ICar* car) : pCar(car) { ; }
+	void Report()
+	{
+		pCar->Report();
+		std::cout << " Decorated with spoiler.";
+	};
 };
 
-class Facade{
-private:
-    Package1 pack1;
-    Package2 pack2;
-    Package3 pack3;
+class RedCar : public ICar
+{
+	ICar* pCar;
 public:
-    void DoSomething(){
-        pack1.Shift();
-        pack2.Rotate(pack3.Calc());
-        pack1.Shift();
-    }
+	RedCar(ICar* car) : pCar(car) { ; }
+	void Report()
+	{
+		pCar->Report();
+		std::cout << " Painted vivid red.";
+	};
 };
 
 
-int main(){
-
-    Facade facade;
-    facade.DoSomething();
-
+int main()
+{
+	Car car;
+	car.Report();
+	std::cout << std::endl;
+	DecoratedSpoiler decoratedCar(new RedCar(&car));
+	decoratedCar.Report();
 }
