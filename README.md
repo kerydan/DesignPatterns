@@ -17,7 +17,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [ ] [Decorator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Decorator.cpp)
 - [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
-- [ ] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
+- [x] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
 
 ### Behavioral Patterns
 - [ ] [Chain of responsibility](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/ChainOR.cpp)

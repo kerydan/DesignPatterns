@@ -1,43 +1,48 @@
 /*
-Design Pattern Facade. 
+Design Pattern Proxy. 
 
-Simplifies interface to a set of objects or packages
+Provides a surrogate or placeholder for another object to control access to it.
+ A proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes.
 */
 
-class Package1{
+
+#include <iostream>
+
+class Beer {
 public:
-    void Shift(){}
+	virtual void Drink() = 0;
 };
 
-class Package2{
-public:
-    int Rotate(int i){ return i + 2; }
-
+class RealBeer : public Beer {
+	void Drink() override {
+		std::cout << "Enjoy your drink!" << std::endl;
+	}
 };
 
-class Package3{
-public:
-    int Calc(){ return 3; }
-
-};
-
-class Facade{
+class Barmen : public Beer {
 private:
-    Package1 pack1;
-    Package2 pack2;
-    Package3 pack3;
+	Beer* realBeer;
+	int clientAge;
+
 public:
-    void DoSomething(){
-        pack1.Shift();
-        pack2.Rotate(pack3.Calc());
-        pack1.Shift();
-    }
+	Barmen(int age) : realBeer(new RealBeer()), clientAge(age) {}
+
+	void Drink() {
+		if (clientAge > 16)
+			realBeer->Drink();
+		else
+			std::cout << "Sorry, you are too young. Come over later" << std::endl;
+	}
 };
 
 
-int main(){
+int main()
+{
+	Beer* proxyBeer = new Barmen(15);
+	proxyBeer->Drink();
+	delete proxyBeer;
 
-    Facade facade;
-    facade.DoSomething();
-
+	proxyBeer = new Barmen(23);
+	proxyBeer->Drink();
+	delete proxyBeer;
 }
