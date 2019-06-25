@@ -1,5 +1,3 @@
-#include <iostream>
-
 /**
  * Chain of Responsibility Design Pattern
  *
@@ -8,8 +6,7 @@
  * objects and passes the requests along the chain until an object handles it.
  */
 
-
-using namespace std;
+#include <iostream>
 
 class Facility
 {
