@@ -20,7 +20,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [x] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
 
 ### Behavioral Patterns
-- [ ] [Chain of responsibility](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/ChainOR.cpp)
+- [x] [Chain of responsibility](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/ChainOR.cpp)
 - [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
 - [ ] [Interpreter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Interpreter.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)

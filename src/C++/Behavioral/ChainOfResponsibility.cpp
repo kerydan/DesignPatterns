@@ -1,114 +1,99 @@
-#include <stdio.h>
 #include <iostream>
 
-class PowerState;
+/**
+ * Chain of Responsibility Design Pattern
+ *
+ * The pattern has the intent to avoid coupling the sender of a request to its receiver
+ * by giving more than one object a chance to handle the request. Chains the receiving
+ * objects and passes the requests along the chain until an object handles it.
+ */
 
-class PowerManager
+
+using namespace std;
+
+class Facility
 {
-public:
-	PowerManager();
-	void GoSuspendPower();
-	void GoFullPower();
-	void GoLowPower();
-
-private:
-	friend class PowerState;
-	void ChangeState(PowerState* _state) { state = _state; };
-	PowerState* state;
-};
-
-class PowerState
-{
-public:
-	static PowerState* GetInstance();
-	virtual void GoSuspendPower(PowerManager* man) {};
-	virtual void GoFullPower(PowerManager* man) {};
-	virtual void GoLowPower(PowerManager* man) {};
-
 protected:
-	PowerState() {}
-	void ChangeState(PowerManager* man, PowerState* state) { man->ChangeState(state); };
-};
-
-class LowPowerState : public PowerState
-{
+    Facility* next;
 public:
-	static PowerState* GetInstance()
-	{
-		static LowPowerState state;
-		return &state;
-	}
-	virtual void GoSuspendPower(PowerManager *man);
-	virtual void GoFullPower(PowerManager *man);
+    Facility* addNext(Facility* f)
+    {
+        next = f;
+        return next;
+    }
+    virtual void apply(int age) = 0;
 };
 
-class FullPowerState : public PowerState
+class KinderGarden : public Facility
 {
+    int age1 = 3;
+    int age2 = 7;
 public:
-	static PowerState* GetInstance()
-	{
-		static FullPowerState state;
-		return &state;
-	}
+    void apply(int age)
+    {
+        if (age >= age1 && age <= age2)
+        {
+            std::cout << "Enrolled in Kinder Garden \n";
+        }
+        else if (next)
+        {
+            next->apply(age);
+        }
+    }
 };
 
-class SuspendPowerState : public PowerState
+class PrimarySchool : public Facility
 {
+    int age1 = 8;
+    int age2 = 12;
 public:
-	static PowerState* GetInstance()
-	{
-		static SuspendPowerState state;
-		return &state;
-	}
-	virtual void GoFullPower(PowerManager *man);
+    void apply(int age)
+    {
+        if (age >= age1 && age <= age2)
+        {
+            std::cout << "Enrolled in Primary School \n";
+        }
+        else if (next)
+        {
+            next->apply(age);
+        }
+    }
 };
 
-PowerManager::PowerManager()
+class SecondarySchool : public Facility
 {
-	state = LowPowerState::GetInstance();
-}
+    int age1 = 13;
+public:
+    void apply(int age)
+    {
+        if (age >= age1)
+        {
+            std::cout << "Enrolled in Secondary School \n";
+        }
+        else if (next)
+        {
+            next->apply(age);
+        }
+    }
+};
 
-void PowerManager::GoSuspendPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoSuspendPower(this);
-}
-
-void PowerManager::GoFullPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoFullPower(this);
-}
-
-void PowerManager::GoLowPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoLowPower(this);
-}
-
-void LowPowerState::GoSuspendPower(PowerManager *man)
-{
-	// save configuration to RAM
-	ChangeState(man, SuspendPowerState::GetInstance());
-}
-
-void LowPowerState::GoFullPower(PowerManager *man)
-{
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-void SuspendPowerState::GoFullPower(PowerManager *man)
-{
-	// load configuration from RAM
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
 
 int main()
 {
-	PowerManager power_man;
-	power_man.GoSuspendPower();
-	power_man.GoFullPower();
-	return 0;
+    Facility* educationFacility = new KinderGarden();
+    educationFacility->addNext(new PrimarySchool())->addNext(new SecondarySchool());
+
+    educationFacility->apply(15);
+    educationFacility->apply(9);
+    educationFacility->apply(4);
+
+    return 0;
 }
+
+/**
+   Output:
+
+    Enrolled in Secondary School
+    Enrolled in Primary School
+    Enrolled in Kinder Garden
+*/
