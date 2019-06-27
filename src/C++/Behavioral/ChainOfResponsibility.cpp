@@ -30,7 +30,7 @@ public:
     {
         if (age >= age1 && age <= age2)
         {
-            std::cout << "Enrolled in Kinder Garden \n";
+            std::cout <<"A kid of age " << age <<" enrolled in Kinder Garden \n";
         }
         else if (next)
         {
@@ -48,7 +48,7 @@ public:
     {
         if (age >= age1 && age <= age2)
         {
-            std::cout << "Enrolled in Primary School \n";
+            std::cout << "A kid of age " << age <<" enrolled in Primary School \n";
         }
         else if (next)
         {
@@ -65,7 +65,7 @@ public:
     {
         if (age >= age1)
         {
-            std::cout << "Enrolled in Secondary School \n";
+            std::cout << "A kid of age " << age <<" enrolled in Secondary School \n";
         }
         else if (next)
         {
@@ -74,15 +74,14 @@ public:
     }
 };
 
-
 int main()
 {
     Facility* educationFacility = new KinderGarden();
     educationFacility->addNext(new PrimarySchool())->addNext(new SecondarySchool());
 
     educationFacility->apply(15);
-    educationFacility->apply(9);
     educationFacility->apply(4);
+    educationFacility->apply(9);
 
     return 0;
 }
@@ -90,7 +89,7 @@ int main()
 /**
    Output:
 
-    Enrolled in Secondary School
-    Enrolled in Primary School
-    Enrolled in Kinder Garden
+        A kid of age 15 enrolled in Secondary School
+        A kid of age 4 enrolled in Kinder Garden
+        A kid of age 9 enrolled in Primary School
 */

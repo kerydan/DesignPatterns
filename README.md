@@ -24,7 +24,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
 - [ ] [Interpreter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Interpreter.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
-- [ ] [Mediator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Mediator.cpp)
+- [x] [Mediator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Mediator.cpp)
 - [ ] [Memento](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Memento.cpp)
 - [ ] [Observer](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Observer.cpp)
 - [x] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
