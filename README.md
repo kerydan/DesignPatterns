@@ -13,8 +13,8 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 ### Structural Patterns
 - [x] [Adapter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Adapter.cpp)
 - [x] [Bridge](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Bridge.cpp)
-- [ ] [Composite](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Composite.cpp)
-- [X] [Decorator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Decorator.cpp)
+- [x] [Composite](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Composite.cpp)
+- [x] [Decorator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Decorator.cpp)
 - [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
 - [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
 - [x] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
