@@ -1,8 +1,9 @@
-/*
-Design Pattern Decorator. 
-
-allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
-*/
+/**
+ *
+ *Design Pattern Decorator. 
+ *
+ *allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
+ */
 
 #include <iostream>
 
@@ -26,7 +27,7 @@ public:
 	void Report()
 	{
 		pCar->Report();
-		std::cout << " Decorated with spoiler.";
+		std::cout << " Decorated with a fancy spoiler.";
 	};
 };
 
@@ -51,3 +52,10 @@ int main()
 	DecoratedSpoiler decoratedCar(new RedCar(&car));
 	decoratedCar.Report();
 }
+
+/**
+Output:
+
+	A car.
+	A car. Painted vivid red. Decorated with a fancy spoiler.
+*/
