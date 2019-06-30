@@ -1,8 +1,8 @@
 /**
  *
- *Design Pattern Decorator. 
+ * Decorator design pattern
  *
- *allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
+ * Allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.
  */
 
 #include <iostream>
