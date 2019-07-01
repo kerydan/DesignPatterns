@@ -1,114 +1,54 @@
-#include <stdio.h>
+/**
+ * Command Design Pattern
+ *
+ * Encapsulates an action and its parameters.
+ */
+
 #include <iostream>
+#include <vector>
 
-class PowerState;
-
-class PowerManager
+class Receiver
 {
 public:
-	PowerManager();
-	void GoSuspendPower();
-	void GoFullPower();
-	void GoLowPower();
-
-private:
-	friend class PowerState;
-	void ChangeState(PowerState* _state) { state = _state; };
-	PowerState* state;
+    void Start(){ std::cout << "Engine is On" << std::endl; }
 };
 
-class PowerState
+class Command
 {
-public:
-	static PowerState* GetInstance();
-	virtual void GoSuspendPower(PowerManager* man) {};
-	virtual void GoFullPower(PowerManager* man) {};
-	virtual void GoLowPower(PowerManager* man) {};
-
 protected:
-	PowerState() {}
-	void ChangeState(PowerManager* man, PowerState* state) { man->ChangeState(state); };
+Receiver* receiver;
+
+public:
+    Command(Receiver *rec) : receiver(rec) {}
+    virtual void Action() = 0;
 };
 
-class LowPowerState : public PowerState
+class ConcreteCommand : public Command
 {
 public:
-	static PowerState* GetInstance()
-	{
-		static LowPowerState state;
-		return &state;
-	}
-	virtual void GoSuspendPower(PowerManager *man);
-	virtual void GoFullPower(PowerManager *man);
+    ConcreteCommand(Receiver *rec) : Command(rec) {}
+    virtual void Action() {receiver->Start();}
 };
 
-class FullPowerState : public PowerState
+class Invoker
 {
+    Command* command;
 public:
-	static PowerState* GetInstance()
-	{
-		static FullPowerState state;
-		return &state;
-	}
+    void SetCommand(Command* com) { command = com; }
+    void Execute() {command->Action();}
 };
 
-class SuspendPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static SuspendPowerState state;
-		return &state;
-	}
-	virtual void GoFullPower(PowerManager *man);
-};
+int main() {
 
-PowerManager::PowerManager()
-{
-	state = LowPowerState::GetInstance();
+    Receiver engine;
+    ConcreteCommand commandOn(&engine);
+    Invoker onBoardComputer;
+    onBoardComputer.SetCommand(&commandOn);
+    onBoardComputer.Execute();
 }
 
-void PowerManager::GoSuspendPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoSuspendPower(this);
-}
+/**
+  Output:
 
-void PowerManager::GoFullPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoFullPower(this);
-}
-
-void PowerManager::GoLowPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoLowPower(this);
-}
-
-void LowPowerState::GoSuspendPower(PowerManager *man)
-{
-	// save configuration to RAM
-	ChangeState(man, SuspendPowerState::GetInstance());
-}
-
-void LowPowerState::GoFullPower(PowerManager *man)
-{
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-void SuspendPowerState::GoFullPower(PowerManager *man)
-{
-	// load configuration from RAM
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-int main()
-{
-	PowerManager power_man;
-	power_man.GoSuspendPower();
-	power_man.GoFullPower();
-	return 0;
-}
+        Engine is On
+*/

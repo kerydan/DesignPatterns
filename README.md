@@ -3,7 +3,7 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_Type) in C++
 
-# 5 Left
+# 4 Left
 
 ### Creational Patterns
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
@@ -23,7 +23,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 
 ### Behavioral Patterns
 - [x] [Chain of responsibility](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/ChainOfResponsibility.cpp)
-- [ ] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
+- [x] [Command](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Command.cpp)
 - [ ] [Interpreter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Interpreter.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
 - [x] [Mediator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Mediator.cpp)
