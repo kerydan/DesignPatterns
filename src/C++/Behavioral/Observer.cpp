@@ -1,114 +1,112 @@
-#include <stdio.h>
+/**
+ * Observer Design Pattern
+ *
+ * An object, called the subject, maintains a list of its dependents, called observers, and notifies them
+ * automatically of any state changes, usually by calling one of their methods.
+ */
+
 #include <iostream>
+#include <vector>
 
-class PowerState;
+class Observer;
 
-class PowerManager
+class Subject
 {
-public:
-	PowerManager();
-	void GoSuspendPower();
-	void GoFullPower();
-	void GoLowPower();
+    std::vector <class Observer*> views;
+    int oldPrice;
+    int newPrice;
 
-private:
-	friend class PowerState;
-	void ChangeState(PowerState* _state) { state = _state; };
-	PowerState* state;
+  public:
+
+    void Attach(Observer *obs)
+    {
+        views.push_back(obs);
+    }
+
+    void SetPrice(int price)
+    {
+        oldPrice = newPrice;
+        newPrice = price;
+        Notify();
+    }
+
+    int GetOldPrice()
+    {
+        return oldPrice;
+    }
+
+    int GetNewPrice()
+    {
+        return newPrice;
+    }
+
+    void Notify();
 };
 
-class PowerState
+class Observer
 {
-public:
-	static PowerState* GetInstance();
-	virtual void GoSuspendPower(PowerManager* man) {};
-	virtual void GoFullPower(PowerManager* man) {};
-	virtual void GoLowPower(PowerManager* man) {};
-
-protected:
-	PowerState() {}
-	void ChangeState(PowerManager* man, PowerState* state) { man->ChangeState(state); };
+    Subject *subject;
+  public:
+    Observer(Subject *subj)
+    {
+        subject = subj;
+        subject->Attach(this);
+    }
+    virtual void Update() = 0;
+  protected:
+    Subject *GetSubject()
+    {
+        return subject;
+    }
 };
 
-class LowPowerState : public PowerState
+void Subject::Notify()
 {
-public:
-	static PowerState* GetInstance()
-	{
-		static LowPowerState state;
-		return &state;
-	}
-	virtual void GoSuspendPower(PowerManager *man);
-	virtual void GoFullPower(PowerManager *man);
+    for (auto& i : views)
+    {
+        i->Update();
+    }
+}
+
+class PriceObserver: public Observer
+{
+  public:
+    PriceObserver(Subject *subj): Observer(subj){}
+    void Update()
+    {
+        std::cout << "PriceObserver: The new car price is " << GetSubject()->GetNewPrice() << "$"  << std::endl;
+    }
 };
 
-class FullPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static FullPowerState state;
-		return &state;
-	}
+class PriceDynamicObserver: public Observer {
+  public:
+    PriceDynamicObserver(Subject *subj): Observer(subj){}
+    void Update()
+    {
+        int newPrice = GetSubject()->GetNewPrice();
+        int oldPrice = GetSubject()->GetOldPrice();
+        if (newPrice < oldPrice)
+        {
+            std::cout << "PriceDynamicObserver: The price dropped by " << oldPrice - newPrice << "$" << std::endl;
+        }
+        else
+        {
+            std::cout << "PriceDynamicObserver: The price increased by " << oldPrice - newPrice << "$" << std::endl;
+        }
+    }
 };
 
-class SuspendPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static SuspendPowerState state;
-		return &state;
-	}
-	virtual void GoFullPower(PowerManager *man);
-};
-
-PowerManager::PowerManager()
-{
-	state = LowPowerState::GetInstance();
+int main() {
+  Subject car;
+  car.SetPrice(35000);
+  PriceObserver priceObserver(&car);
+  PriceDynamicObserver priceDynamicObserver(&car);
+  car.SetPrice(32000);
 }
 
-void PowerManager::GoSuspendPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoSuspendPower(this);
-}
+/**
+  Output:
 
-void PowerManager::GoFullPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoFullPower(this);
-}
-
-void PowerManager::GoLowPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoLowPower(this);
-}
-
-void LowPowerState::GoSuspendPower(PowerManager *man)
-{
-	// save configuration to RAM
-	ChangeState(man, SuspendPowerState::GetInstance());
-}
-
-void LowPowerState::GoFullPower(PowerManager *man)
-{
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-void SuspendPowerState::GoFullPower(PowerManager *man)
-{
-	// load configuration from RAM
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-int main()
-{
-	PowerManager power_man;
-	power_man.GoSuspendPower();
-	power_man.GoFullPower();
-	return 0;
-}
+    PriceObserver: The new car price is 32000$
+    PriceDynamicObserver: The price dropped by 3000$
+*/
