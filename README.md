@@ -3,7 +3,7 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_Type) in C++
 
-# 4 Left
+# 3 Left
 
 ### Creational Patterns
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
@@ -18,7 +18,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [x] [Composite](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Composite.cpp)
 - [x] [Decorator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Decorator.cpp)
 - [x] [Facade](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Facade.cpp)
-- [ ] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
+- [x] [Flyweight](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Flyweight.cpp)
 - [x] [Proxy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Structural/Proxy.cpp)
 
 ### Behavioral Patterns
