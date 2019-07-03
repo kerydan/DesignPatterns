@@ -3,7 +3,7 @@
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_Type) in C++
 
-# 3 Left
+# 2 Left
 
 ### Creational Patterns
 - [x] [Abstract Factory](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Creational/AbstractFactory.cpp)
@@ -27,7 +27,7 @@ Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Pattern
 - [ ] [Interpreter](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Interpreter.cpp)
 - [ ] [Iterator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Iterator.cpp)
 - [x] [Mediator](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Mediator.cpp)
-- [ ] [Memento](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Memento.cpp)
+- [x] [Memento](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Memento.cpp)
 - [x] [Observer](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Observer.cpp)
 - [x] [State](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/State.cpp)
 - [x] [Strategy](https://github.com/kerydan/DesignPatterns/blob/master/src/C++/Behavioral/Strategy.cpp)

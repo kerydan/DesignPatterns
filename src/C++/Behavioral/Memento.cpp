@@ -1,114 +1,52 @@
-#include <stdio.h>
+/**
+ * Memento Design Pattern
+ *
+ * Provides the ability to restore an object to one of its previous states
+ */
+
 #include <iostream>
 
-class PowerState;
-
-class PowerManager
+class Memento
 {
+    int state;
 public:
-	PowerManager();
-	void GoSuspendPower();
-	void GoFullPower();
-	void GoLowPower();
-
-private:
-	friend class PowerState;
-	void ChangeState(PowerState* _state) { state = _state; };
-	PowerState* state;
+    Memento(int s): state(s){}
+    int GetState() {return state;}
 };
 
-class PowerState
+class Originator
 {
+    int state;
 public:
-	static PowerState* GetInstance();
-	virtual void GoSuspendPower(PowerManager* man) {};
-	virtual void GoFullPower(PowerManager* man) {};
-	virtual void GoLowPower(PowerManager* man) {};
-
-protected:
-	PowerState() {}
-	void ChangeState(PowerManager* man, PowerState* state) { man->ChangeState(state); };
+    void SetState(int s)
+    {
+        state = s;
+        std::cout << "The game in state " << state << std::endl;
+    }
+    Memento* CreateMemento(){ return new Memento(state);}
+    void RestoreMemento(Memento* m)\
+    {
+        std::cout << "The game restored from state " << state << " to state " << m->GetState() << std::endl;
+        state = m->GetState();
+    }
 };
-
-class LowPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static LowPowerState state;
-		return &state;
-	}
-	virtual void GoSuspendPower(PowerManager *man);
-	virtual void GoFullPower(PowerManager *man);
-};
-
-class FullPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static FullPowerState state;
-		return &state;
-	}
-};
-
-class SuspendPowerState : public PowerState
-{
-public:
-	static PowerState* GetInstance()
-	{
-		static SuspendPowerState state;
-		return &state;
-	}
-	virtual void GoFullPower(PowerManager *man);
-};
-
-PowerManager::PowerManager()
-{
-	state = LowPowerState::GetInstance();
-}
-
-void PowerManager::GoSuspendPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoSuspendPower(this);
-}
-
-void PowerManager::GoFullPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoFullPower(this);
-}
-
-void PowerManager::GoLowPower()
-{
-	// do whatever needed prior going to the suspend mode
-	state->GoLowPower(this);
-}
-
-void LowPowerState::GoSuspendPower(PowerManager *man)
-{
-	// save configuration to RAM
-	ChangeState(man, SuspendPowerState::GetInstance());
-}
-
-void LowPowerState::GoFullPower(PowerManager *man)
-{
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
-
-void SuspendPowerState::GoFullPower(PowerManager *man)
-{
-	// load configuration from RAM
-	// start modules
-	ChangeState(man, FullPowerState::GetInstance());
-}
 
 int main()
 {
-	PowerManager power_man;
-	power_man.GoSuspendPower();
-	power_man.GoFullPower();
-	return 0;
+    Originator game;
+    game.SetState(1);
+    game.SetState(2);
+    Memento* save2 = game.CreateMemento();
+    game.SetState(3);
+    game.RestoreMemento(save2);
+    delete save2;
 }
+
+/**
+  Output:
+
+    The game in state 1
+    The game in state 2
+    The game in state 3
+    The game restored from state 3 to state 2
+*/
