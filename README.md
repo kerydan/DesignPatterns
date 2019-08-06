@@ -1,4 +1,4 @@
-﻿Design Patterns
+﻿Design Patterns 1
 ===============
 
 Implementation of [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_Type) in C++
