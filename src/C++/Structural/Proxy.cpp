@@ -7,10 +7,12 @@ Provides a surrogate or placeholder for another object to control access to it.
 
 
 #include <iostream>
+#include <memory>
 
 class Beer {
 public:
 	virtual void Drink() = 0;
+	virtual ~Beer() {};	
 };
 
 class RealBeer : public Beer {
@@ -19,13 +21,13 @@ class RealBeer : public Beer {
 	}
 };
 
-class Barmen : public Beer {
+class Barman : public Beer {
 private:
-	Beer* realBeer;
+	std::unique_ptr<Beer> realBeer=std::make_unique<RealBeer>();
 	int clientAge;
 
 public:
-	Barmen(int age) : realBeer(new RealBeer()), clientAge(age) {}
+	Barman(int age) : clientAge(age) {}
 
 	void Drink() {
 		if (clientAge > 16)
@@ -38,11 +40,9 @@ public:
 
 int main()
 {
-	Beer* proxyBeer = new Barmen(15);
-	proxyBeer->Drink();
-	delete proxyBeer;
-
-	proxyBeer = new Barmen(23);
-	proxyBeer->Drink();
-	delete proxyBeer;
+    std::unique_ptr<Beer> beer = std::make_unique<Barman>(15);
+    beer->Drink();
+    
+    beer = std::make_unique<Barman>(23);
+    beer->Drink();
 }
