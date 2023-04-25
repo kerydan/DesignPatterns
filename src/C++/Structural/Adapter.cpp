@@ -1,4 +1,7 @@
-// Design Pattern Adapter. Adapter provides a compartible interface to an object with incompartible interface
+/*
+Design Pattern Adapter. 
+Adapter provides a compartible interface to an object with incompartible interface
+*/
 #include <iostream>
 #include <memory>
 
