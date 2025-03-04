@@ -25,18 +25,18 @@ public:
     
 };
 
-class Adapter1 : public iAdapter
+class Adapter1 : public iAdaptor
 {
     Specific* specific;
 public:
-    Adapter1(Specific* s): specific(s) {}
+    Adaptor1(Specific* s): specific(s) {}
     void Print()
     {
         specific->PrintSpecific();
     }    
 };
 
-class Adapter2 : public iAdapter, private Specific
+class Adaptor2 : public iAdaptor, private Specific
 {
 public:
     void Print()
@@ -48,9 +48,9 @@ public:
 int main()
 {
     Specific s;
-    Adapter1 a1(s);
+    Adaptor1 a1(s);
     a1.Print();
 
-    unique_ptr<iAdapter> p = make_unique<Adapter2>();
+    unique_ptr<iAdaptor> p = make_unique<Adaptor2>();
     p->Print();
 }
