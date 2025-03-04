@@ -7,6 +7,7 @@ Adapter provides a compartible interface to an object with incompartible interfa
 
 using namespace std;
 
+// Adaptee (the class that needs adapting)
 class Specific
 {
 public:
@@ -16,6 +17,7 @@ public:
     }
 };
 
+// This is what client expects. Interface
 class iAdapter
 {
 public:
@@ -23,18 +25,32 @@ public:
     
 };
 
-class Adapter : public iAdapter, private Specific
+class Adapter1 : public iAdapter
+{
+    Specific* specific;
+public:
+    Adapter1(Specific* s): specific(s) {}
+    void Print()
+    {
+        specific->PrintSpecific();
+    }    
+};
+
+class Adapter2 : public iAdapter, private Specific
 {
 public:
     void Print()
     {
         PrintSpecific();
-    }
-    
+    }    
 };
 
 int main()
 {
-    unique_ptr<iAdapter> p = make_unique<Adapter>();
+    Specific s;
+    Adapter1 a1(s);
+    a1.Print();
+
+    unique_ptr<iAdapter> p = make_unique<Adapter2>();
     p->Print();
 }
