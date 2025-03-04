@@ -3,54 +3,53 @@ Design Pattern Adapter.
 Adapter provides a compartible interface to an object with incompartible interface
 */
 #include <iostream>
-#include <memory>
+#include <print>
 
 using namespace std;
 
-// Adaptee (the class that needs adapting)
-class Specific
+// We adopt Car to Boat. We want to use car on sea.
+// Ultimately client wats to use object Car with method Sail()
+
+// This is what client expects. 
+class Boat
 {
 public:
-    void PrintSpecific() 
-    {
-        cout << "Specific printing\n";
-    }
+    virtual void Sail(){println("We sail!!");} 
 };
 
-// This is what client expects. Interface
-class iAdapter
+// Adaptee. This car needs to be adopted to Boat
+class Car
 {
-public:
-    virtual void Print() = 0;
-    
+    string name;
+    public:
+    Car(string str) : name(str) {}
+    void Drive(){println("We driving {}", name);} 
 };
 
-class Adapter1 : public iAdaptor
-{
-    Specific* specific;
-public:
-    Adaptor1(Specific* s): specific(s) {}
-    void Print()
-    {
-        specific->PrintSpecific();
-    }    
-};
 
-class Adaptor2 : public iAdaptor, private Specific
+// Adaptor 
+class CarToBoat : public Boat
 {
-public:
-    void Print()
+    Car *car;
+    public:
+    CarToBoat(Car* c) : car(c){};
+    virtual void Sail() override
     {
-        PrintSpecific();
-    }    
+        println("First put the car on boat and then ...");
+        car->Drive();
+    } 
 };
 
 int main()
 {
-    Specific s;
-    Adaptor1 a1(s);
-    a1.Print();
+    // Normal boat is used as boat
+    Boat *b1 = new Boat();
+    b1->Sail();
 
-    unique_ptr<iAdaptor> p = make_unique<Adaptor2>();
-    p->Print();
+    // Car is used as boat
+    Car car("Toyota");
+    Boat *b2 = new CarToBoat(&car);
+    b2->Sail();
+
+    return 0;
 }
