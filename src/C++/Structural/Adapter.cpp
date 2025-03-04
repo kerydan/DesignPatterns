@@ -27,7 +27,7 @@ class Car
 };
 
 
-// Adaptor 
+// Adapter 
 class CarToBoat : public Boat
 {
     Car *car;
