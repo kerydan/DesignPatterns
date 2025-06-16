@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
 
 class Receiver
 {
@@ -32,18 +33,18 @@ public:
 
 class Invoker
 {
-    Command* command;
+    unique_ptr<Command> command;
 public:
-    void SetCommand(Command* com) { command = com; }
+    void SetCommand(unique_ptr<Command> com) { command = move(com); }
     void Execute() {command->Action();}
 };
 
 int main() {
 
     Receiver engine;
-    ConcreteCommand commandOn(&engine);
+    ConcreteCommand ;
     Invoker onBoardComputer;
-    onBoardComputer.SetCommand(&commandOn);
+    onBoardComputer.SetCommand(make_unique<commandOn>(&engine));
     onBoardComputer.Execute();
 }
 
