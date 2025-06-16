@@ -42,7 +42,6 @@ public:
 int main() {
 
     Receiver engine;
-    ConcreteCommand ;
     Invoker onBoardComputer;
     onBoardComputer.SetCommand(make_unique<commandOn>(&engine));
     onBoardComputer.Execute();
